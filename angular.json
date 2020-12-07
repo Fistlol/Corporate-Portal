@@ -127,5 +127,8 @@
       }
     }
   },
-  "defaultProject": "korp-portal"
+  "defaultProject": "korp-portal",
+  "cli": {
+    "analytics": false
+  }
 }
