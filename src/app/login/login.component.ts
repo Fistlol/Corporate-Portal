@@ -9,12 +9,11 @@ import { HttpClient } from '@angular/common/http';
 export class LoginComponent implements OnInit {
   username = '';
   password = '';
-  id: any;
   response: any;
   constructor(private http: HttpClient) { }
 
   login(): any {
-    this.http.get('http://anticor.idet.kz/crimeWebAPI/User/Login?' + this.username + '=' + this.password + '=' + this.id)
+    this.http.get('http://anticor.idet.kz/crimeWebAPI/User/Login?' + this.username + '=' + this.password)
       .subscribe((response) => {
         this.response = response;
         console.log(this.response);
