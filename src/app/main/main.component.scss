@@ -1,0 +1,92 @@
+.container {
+  width: 100%;
+  height: 969px;
+  background: #E9EAEC;
+  display: flex;
+  &__left {
+    display: flex;
+    width: 350px;
+    height: 100%;
+    background: #02344F;
+    flex-direction: column;
+    align-items: center;
+    &__corporation {
+      display: flex;
+      width: 250px;
+      height: 80px;
+      justify-content: space-around;
+      align-items: center;
+    }
+    &__profile {
+      display: flex;
+      width: 100%;
+      height: 80px;
+      border: solid 1px #ABDFEC;
+      &__image {
+        margin: 0 18px 0 21px;
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+        justify-content: space-around;
+        &__icon {
+          width: 57px;
+          height: 57px;
+        }
+      }
+      &__name {
+        display: flex;
+        width: 100%;
+        font-family: 'Mulish', sans-serif;
+        font-weight: bold;
+        font-size: 20px;
+        line-height: 25px;
+        letter-spacing: 0.2px;
+        color: #ABDFEC;
+        align-items: center;
+      }
+    }
+    &__navigation {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      margin-top: 25px;
+      &__menu {
+        display: flex;
+        width: 333px;
+        height: 56px;
+        align-items: center;
+        justify-content: center;
+
+        &__icon {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 70px;
+        }
+        &__name {
+          width: 100%;
+          align-items: center;
+          display: flex;
+          font-family: 'Mulish', sans-serif;
+          font-size: 18px;
+          line-height: 23px;
+          letter-spacing: 0.2px;
+          color: #ABDFEC;
+        }
+        &:hover {
+          background-color: #abdfec;
+          color: #02344f;
+          border-radius: 3px;
+        }
+        &:hover &__icon {
+          background-color: #abdfec;
+          color: #02344f;
+        }
+        &:hover &__name {
+          background-color: #abdfec;
+          color: #02344f;
+        }
+      }
+    }
+  }
+}

@@ -1,18 +1,22 @@
 <div class="container">
   <div class="container__content">
-    <img src="./assets/icons/a-title.svg" alt="A-title">
+    <img src="./assets/icons/login/a-title.svg" alt="A-title">
     <div class="container__content__icons">
-      <img class="container__content__icon" src="./assets/icons/a.svg" alt="A">
-      <img class="container__content__icon" src="./assets/icons/n.svg" alt="N">
-      <img class="container__content__icon" src="./assets/icons/t.svg" alt="T">
-      <img class="container__content__icon" src="./assets/icons/i.svg" alt="I">
-      <img class="container__content__icon" src="./assets/icons/k.svg" alt="K">
-      <img class="container__content__icon" src="./assets/icons/o.svg" alt="O">
-      <img class="container__content__icon" src="./assets/icons/r.svg" alt="R">
+      <img class="container__content__icon" src="./assets/icons/login/a.svg" alt="A">
+      <img class="container__content__icon" src="./assets/icons/login/n.svg" alt="N">
+      <img class="container__content__icon" src="./assets/icons/login/t.svg" alt="T">
+      <img class="container__content__icon" src="./assets/icons/login/i.svg" alt="I">
+      <img class="container__content__icon" src="./assets/icons/login/k.svg" alt="K">
+      <img class="container__content__icon" src="./assets/icons/login/o.svg" alt="O">
+      <img class="container__content__icon" src="./assets/icons/login/r.svg" alt="R">
     </div>
     <div class="container__content__block">
-      <input type="text" class="container__content__block__input" placeholder="Введите логин" [(ngModel)]="username">
-      <input type="password" class="container__content__block__input" placeholder="Введите пароль" [(ngModel)]="password">
+      <form class="container__content__block" [formGroup]="form">
+        <input type="text" class="container__content__block__input" required placeholder="Введите логин"
+               formControlName="username">
+        <input type="password" class="container__content__block__input" required placeholder="Введите пароль"
+               formControlName="password">
+      </form>
       <button type="submit" class="container__content__block__button" (click)="login()">
         Войти
       </button>

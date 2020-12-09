@@ -1,7 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { AuthorizeService } from '../authorize.service';
-import {Router} from '@angular/router';
+import { FormBuilder } from '@angular/forms';
+import { Router } from '@angular/router';
+import { Validators } from '@angular/forms';
+
 
 @Component({
   selector: 'app-login',
@@ -9,14 +12,21 @@ import {Router} from '@angular/router';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
-  username = '';
-  password = '';
+  form = this.fb.group({
+    username: [null, Validators.required],
+    password: [null, Validators.required]
+  });
+  // username = '';
+  // password = '';
   response: any;
 
-  constructor(private http: HttpClient, private authServise: AuthorizeService, private router: Router) { }
+  constructor(private http: HttpClient,
+              private fb: FormBuilder,
+              private authService: AuthorizeService,
+              private router: Router) { }
 
   login(): any {
-    this.authServise.login(this.username, this.password)
+    this.authService.login(this.form.controls.username.value, this.form.controls.password.value)
       .subscribe((response) => {
         this.response = response;
         console.log(this.response);

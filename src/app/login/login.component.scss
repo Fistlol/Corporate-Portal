@@ -36,6 +36,9 @@
 
       &__input {
         background: #E8F0FE;
+        font-family: 'Roboto', sans-serif;
+        line-height: 21px;
+        font-size: 18px;
         box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.6);
         border-radius: 7px;
         margin: 0 0 15px;
@@ -48,6 +51,9 @@
       &__button {
         height: 65px;
         background: #fff;
+        font-family: 'Roboto', sans-serif;
+        line-height: 21px;
+        font-size: 18px;
         box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.6);
         border-radius: 7px;
         border: none;
