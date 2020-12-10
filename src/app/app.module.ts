@@ -8,13 +8,20 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MainComponent } from './main/main.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { ContentComponent } from './content/content.component';
+import { DateComponent } from './date/date.component';
+import { MailboxComponent } from './mailbox/mailbox.component';
+
 
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    MainComponent
+    MainComponent,
+    ContentComponent,
+    DateComponent,
+    MailboxComponent
   ],
   imports: [
     BrowserModule,
