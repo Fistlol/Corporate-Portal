@@ -1,5 +1,38 @@
 <div class="container">
-  <div class="container__top-title">
-    Главная
+
+  <div class="container__content">
+    <div class="container__content__main">
+      <div class="container__content__main__references">
+        <nav class="container__content__main__references__navigation">
+          <a
+            class="container__content__main__references__navigation__box"
+            [routerLink]="'map'"
+          >
+            ANTIKOR
+          </a>
+          <a class="container__content__main__references__navigation__box"
+             [routerLink]="'folder'"
+          >
+            Общая
+          </a>
+          <a class="container__content__main__references__navigation__box"
+             [routerLink]="'camera'"
+          >
+            Фото/Видео
+          </a>
+          <a class="container__content__main__references__navigation__box"
+             [routerLink]="'link'"
+          >
+            Ссылки
+          </a>
+        </nav>
+      </div>
+      <div class="container__content__main__block">
+        <router-outlet></router-outlet>
+      </div>
+    </div>
+    <div class="container__content__date">
+
+    </div>
   </div>
 </div>

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { AuthorizeService } from '../authorize.service';
-import { FormBuilder } from '@angular/forms';
+import {FormBuilder, FormControl, FormGroup} from '@angular/forms';
 import { Router } from '@angular/router';
 import { Validators } from '@angular/forms';
 
@@ -12,12 +12,10 @@ import { Validators } from '@angular/forms';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
-  form = this.fb.group({
-    username: [null, Validators.required],
-    password: [null, Validators.required]
+  form: FormGroup = this.fb.group({
+    username: new FormControl(null, [Validators.required]),
+    password: new FormControl(null, [Validators.required])
   });
-  // username = '';
-  // password = '';
   response: any;
 
   constructor(private http: HttpClient,
@@ -34,10 +32,11 @@ export class LoginComponent implements OnInit {
         //   this.router.navigate(['/main']);
         // }
       });
-    this.router.navigate(['/main']);
+    this.router.navigate(['/main', 'content', 'map']);
   }
 
   ngOnInit(): void {
+
   }
 
 }

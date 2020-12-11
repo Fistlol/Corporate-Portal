@@ -11,13 +11,27 @@
       <img class="container__content__icon" src="./assets/icons/login/r.svg" alt="R">
     </div>
     <div class="container__content__block">
-      <form class="container__content__block" [formGroup]="form">
-        <input type="text" class="container__content__block__input" required placeholder="Введите логин"
-               formControlName="username">
-        <input type="password" class="container__content__block__input" required placeholder="Введите пароль"
-               formControlName="password">
+      <form
+        class="container__content__block"
+        [formGroup]="form"
+      >
+        <input
+          type="text" class="container__content__block__input"
+          placeholder="Введите логин"
+          formControlName="username"
+        >
+        <input
+          type="password" class="container__content__block__input"
+          placeholder="Введите пароль"
+          formControlName="password"
+        >
       </form>
-      <button type="submit" class="container__content__block__button" (click)="login()">
+      <button
+        type="submit"
+        class="container__content__block__button"
+        [disabled]="form.invalid"
+        (click)="login()"
+      >
         Войти
       </button>
     </div>

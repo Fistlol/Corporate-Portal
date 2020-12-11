@@ -18,38 +18,50 @@
         Ашимов Руслан
       </div>
     </div>
-    <div class="container__left__navigation">
-      <a class="container__left__navigation__menu" routerLink="/content">
-        <div class="container__left__navigation__menu__icon">
-          <img
-            class="svg container__left__navigation__menu__icon__title"
-            src="./assets/icons/main/a-title-menu.svg"
-            alt="A-title"
+    <nav class="container__left__nav">
+      <ul class="container__left__nav__navigation">
+        <li class="container__left__nav__navigation__menu" routerLinkActive="active">
+          <img class="container__left__nav__navigation__menu__icon" src="./assets/icons/main/a-title-menu.svg"
+               alt="A-title">
+          <a
+            class="container__left__nav__navigation__menu__name"
+            [routerLink]="'content'"
           >
-        </div>
-        <div class="container__left__navigation__menu__name">
-          Главная
-        </div>
-      </a>
-      <a class="container__left__navigation__menu" routerLink="/date">
-        <div class="container__left__navigation__menu__icon">
-          <img src="./assets/icons/main/date-menu.svg" alt="date">
-        </div>
-        <div class="container__left__navigation__menu__name">
-          Календарь совещаний
-        </div>
-      </a>
-      <a class="container__left__navigation__menu" routerLink="/mailbox">
-        <div class="container__left__navigation__menu__icon">
-          <img src="./assets/icons/main/mailbox-menu.svg" alt="mail">
-        </div>
-        <div class="container__left__navigation__menu__name" style="font-size: 16px; line-height: 20px">
-          Почта
-        </div>
-      </a>
-    </div>
+            Главная
+          </a>
+        </li>
+        <li class="container__left__nav__navigation__menu" routerLinkActive="active">
+          <img class="container__left__nav__navigation__menu__icon" src="./assets/icons/main/date-menu.svg" alt="date">
+          <a
+            class="container__left__nav__navigation__menu__name"
+            [routerLink]="'date'"
+          >
+            Календарь совещаний
+          </a>
+        </li>
+        <li class="container__left__nav__navigation__menu" routerLinkActive="active">
+          <img class="container__left__nav__navigation__menu__icon" src="./assets/icons/main/mailbox-menu.svg"
+               alt="mailbox">
+          <a
+            class="container__left__nav__navigation__menu__name"
+            [routerLink]="'mailbox'"
+            style="font-size: 16px; line-height: 20px"
+          >
+            Почта
+          </a>
+        </li>
+      </ul>
+    </nav>
   </div>
   <div class="container__right">
-
+    <header class="container__right__top-title">
+      Главная
+    </header>
+    <div class="container__right__block">
+      <router-outlet></router-outlet>
+      <div class="container__right__block__events">
+        <div class="container__right__block__events__calendar"></div>
+      </div>
+    </div>
   </div>
 </div>

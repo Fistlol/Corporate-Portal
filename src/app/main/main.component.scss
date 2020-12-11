@@ -3,9 +3,10 @@
   background: #E9EAEC;
   display: flex;
   flex-direction: row;
+
   &__left {
     display: flex;
-    width: 350px;
+    width: 300px;
     height: 100%;
     background: #02344F;
     flex-direction: column;
@@ -13,7 +14,7 @@
     &__corporation {
       display: flex;
       width: 250px;
-      height: 80px;
+      height: 60px;
       justify-content: space-around;
       align-items: center;
     }
@@ -45,61 +46,95 @@
         align-items: center;
       }
     }
-    &__navigation {
+    &__nav {
       display: flex;
-      flex-direction: column;
-      justify-content: space-around;
-      margin-top: 25px;
-      &__menu {
-        display: flex;
-        width: 317px;
-        height: 56px;
-        align-items: center;
-        justify-content: center;
-        margin: 5px 8px;
-        text-decoration: none;
 
-        &__icon {
+      &__navigation {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        margin-top: 15px;
+        padding: 0;
+
+        &__menu {
           display: flex;
-          align-items: center;
-          justify-content: center;
-          width: 70px;
-        }
-        &__name {
-          width: 100%;
-          align-items: center;
-          display: flex;
-          font-family: 'Mulish', sans-serif;
-          font-size: 18px;
-          line-height: 23px;
-          letter-spacing: 0.2px;
-          color: #ABDFEC;
-        }
-        &:hover {
-          background-color: #abdfec;
-          color: #02344f;
-          border-radius: 3px;
-        }
-        &:hover &__icon {
-          background-color: #abdfec;
-          color: #02344f;
-        }
-        &:hover &__name {
-          background-color: #abdfec;
-          color: #02344f;
+          width: 288px;
+          height: 50px;
+          margin: 5px 0;
+          text-decoration: none;
+          cursor: pointer;
+
+          &__icon {
+            margin: 0 15px;
+          }
+
+          &__name {
+            width: 100%;
+            height: auto;
+            align-items: center;
+            display: flex;
+            font-family: 'Mulish', sans-serif;
+            font-size: 18px;
+            line-height: 23px;
+            letter-spacing: 0.2px;
+            color: #ABDFEC;
+            text-decoration: none;
+            border-radius: 3px;
+          }
+
+          &:hover {
+            background-color: #abdfec;
+            color: #02344f;
+            border-radius: 3px;
+          }
+
+          &:hover &__icon {
+            background-color: #abdfec;
+            color: #02344f;
+          }
+
+          &:hover &__name {
+            background-color: #abdfec;
+            color: #02344f;
+          }
         }
       }
     }
   }
-  &__calendar {
+  &__right {
     display: flex;
-    position: absolute;
-    justify-content: flex-end;
-    width: 328px;
-    height: 316px;
-
-    background: #FFFFFF;
-    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.25);
-    border-radius: 8px;
+    width: 100%;
+    flex-direction: column;
+    &__top-title {
+      display: flex;
+      align-items: center;
+      font-family: 'Roboto', sans-serif;
+      font-weight: 600;
+      font-size: 40px;
+      line-height: 130%;
+      width: 1612px;
+      color: #02344F;
+      background-color: #ffffff;
+      padding: 4px 0 4px 20px;
+    }
+    &__block {
+      display: flex;
+      flex-direction: row;
+      &__events {
+        display: flex;
+        width: 100%;
+        &__calendar {
+          display: flex;
+          width: 100%;
+          height: 290px;
+          margin-top: 20px;
+          margin-right: 20px;
+          background: #FFFFFF;
+          box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.25);
+          border-radius: 8px;
+          cursor: pointer;
+        }
+      }
+    }
   }
 }

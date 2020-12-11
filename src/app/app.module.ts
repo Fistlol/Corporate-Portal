@@ -1,18 +1,19 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
-import { HttpClientModule } from '@angular/common/http';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MainComponent } from './main/main.component';
-import { MatFormFieldModule } from '@angular/material/form-field';
 import { ContentComponent } from './content/content.component';
 import { DateComponent } from './date/date.component';
 import { MailboxComponent } from './mailbox/mailbox.component';
-
-
+import { MapComponent } from './map/map.component';
+import { FolderComponent } from './folder/folder.component';
+import { CameraComponent } from './camera/camera.component';
+import { LinkComponent } from './link/link.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,11 @@ import { MailboxComponent } from './mailbox/mailbox.component';
     MainComponent,
     ContentComponent,
     DateComponent,
-    MailboxComponent
+    MailboxComponent,
+    MapComponent,
+    FolderComponent,
+    CameraComponent,
+    LinkComponent
   ],
   imports: [
     BrowserModule,
@@ -29,8 +34,8 @@ import { MailboxComponent } from './mailbox/mailbox.component';
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
-    MatFormFieldModule
   ],
+  exports: [AppRoutingModule],
   providers: [],
   bootstrap: [AppComponent]
 })
