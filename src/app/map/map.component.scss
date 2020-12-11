@@ -1,29 +1,44 @@
 .container {
+  display: flex;
   width: 1250px;
   height: 760px;
   background-color: #FFFFFF;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  flex-direction: column;
   &__top {
     display: flex;
     align-items: flex-start;
     flex-direction: column;
     justify-content: space-between;
-    padding: 30px;
+    padding: 30px 0 0 30px;
     width: 250px;
+    align-content: flex-end;
     height: 100px;
+    justify-content: flex-start;
 
     &__text {
       font-weight: bold;
       font-size: 20px;
       line-height: 23px;
       color: #02344f;
-      margin: 0;
+      margin: 0 0 15px;
     }
     &__count {
       font-weight: bold;
       font-size: 40px;
       line-height: 47px;
       color: #02344f;
+    }
+  }
+  &__map {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    &__icon {
+      width: 1000px;
+      height: 550px;
+      display: flex;
     }
   }
 }

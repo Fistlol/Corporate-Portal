@@ -33,6 +33,10 @@
             &:hover {
               box-shadow: none;
             }
+            &__active {
+              background: #02344F;
+              color: #ffffff;
+            }
           }
         }
       }

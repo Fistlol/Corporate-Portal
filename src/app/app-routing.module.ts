@@ -20,15 +20,15 @@ const routes: Routes = [
   },
   {
     path: 'main', component: MainComponent, children: [
-      // {path: 'content', redirectTo: '/map', pathMatch: 'full'},
+      {path: 'content', redirectTo: '/map', pathMatch: 'full'},
       {path: 'content', component: ContentComponent, children: [
           {path: 'map', component: MapComponent},
           {path: 'folder', component: FolderComponent},
           {path: 'camera', component: CameraComponent},
           {path: 'link', component: LinkComponent},
         ]},
-      {path: 'date', component: DateComponent},
-      {path: 'mailbox', component: MailboxComponent},
+      // {path: 'date', component: DateComponent},
+      // {path: 'mailbox', component: MailboxComponent},
     ],
   },
 

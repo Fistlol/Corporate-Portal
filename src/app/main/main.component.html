@@ -20,31 +20,33 @@
     </div>
     <nav class="container__left__nav">
       <ul class="container__left__nav__navigation">
-        <li class="container__left__nav__navigation__menu" routerLinkActive="active">
+        <li
+          class="container__left__nav__navigation__menu"
+          routerLinkActive="container__left__nav__navigation__active"
+        >
           <img class="container__left__nav__navigation__menu__icon" src="./assets/icons/main/a-title-menu.svg"
                alt="A-title">
           <a
             class="container__left__nav__navigation__menu__name"
             [routerLink]="'content'"
+            style="color: #02344f;"
           >
             Главная
           </a>
         </li>
-        <li class="container__left__nav__navigation__menu" routerLinkActive="active">
+        <li class="container__left__nav__navigation__menu">
           <img class="container__left__nav__navigation__menu__icon" src="./assets/icons/main/date-menu.svg" alt="date">
           <a
             class="container__left__nav__navigation__menu__name"
-            [routerLink]="'date'"
           >
             Календарь совещаний
           </a>
         </li>
-        <li class="container__left__nav__navigation__menu" routerLinkActive="active">
+        <li class="container__left__nav__navigation__menu">
           <img class="container__left__nav__navigation__menu__icon" src="./assets/icons/main/mailbox-menu.svg"
                alt="mailbox">
           <a
             class="container__left__nav__navigation__menu__name"
-            [routerLink]="'mailbox'"
             style="font-size: 16px; line-height: 20px"
           >
             Почта
