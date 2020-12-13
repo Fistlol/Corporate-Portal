@@ -2,6 +2,12 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import {BrowserAnimationsModule, NoopAnimationsModule} from '@angular/platform-browser/animations';
+import { MatDialogModule } from '@angular/material/dialog';
+import { DialogFolderComponent } from './dialog-folder/dialog-folder.component';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatInputModule} from '@angular/material/input';
+import {MatButtonModule} from '@angular/material/button';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -26,7 +32,8 @@ import { LinkComponent } from './link/link.component';
     MapComponent,
     FolderComponent,
     CameraComponent,
-    LinkComponent
+    LinkComponent,
+    DialogFolderComponent
   ],
   imports: [
     BrowserModule,
@@ -34,6 +41,12 @@ import { LinkComponent } from './link/link.component';
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
+    MatDialogModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatButtonModule,
+    BrowserAnimationsModule,
+    NoopAnimationsModule
   ],
   exports: [AppRoutingModule],
   providers: [],

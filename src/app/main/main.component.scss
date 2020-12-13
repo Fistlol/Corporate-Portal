@@ -59,6 +59,13 @@
         &__active {
           background-color: #abdfec;
           color: #02344f;
+          border-radius: 3px;
+          .container__left__nav__navigation__menu__name {
+            color: #02344f;
+          }
+          .container__left__nav__navigation__menu__icon {
+            color: #02344f;
+          }
         }
 
         &__menu {
@@ -71,6 +78,10 @@
 
           &__icon {
             margin: 0 15px;
+            display: flex;
+            align-items: center;
+            font-size: 3rem;
+            color: #ABDFEC;
           }
 
           &__name {
@@ -85,6 +96,9 @@
             color: #ABDFEC;
             text-decoration: none;
             border-radius: 3px;
+            &:first-child {
+              color: #02344f;
+            }
           }
 
 

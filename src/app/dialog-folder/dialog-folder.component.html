@@ -1,0 +1,27 @@
+<!--<h1 mat-dialog-title class="title">Создать новую папку</h1>-->
+<!--<div mat-dialog-content>-->
+<!--  <mat-form-field style="align-items: center;">-->
+<!--    <mat-label>Название папки</mat-label>-->
+<!--    <input matInput [(ngModel)]="data.name" class="input">-->
+<!--  </mat-form-field>-->
+<!--</div>-->
+<!--<div mat-dialog-actions>-->
+<!--  <button mat-button [mat-dialog-close]="data.name" class="save">Сохранить</button>-->
+<!--  <button mat-button (click)="onNoClick()" class="close">Отменить</button>-->
+<!--</div>-->
+
+<div class="container">
+  <div class="container__top">
+    <h2 class="container__top__title">Создать новую папку</h2>
+  </div>
+  <div class="container__mid">
+    <input
+      placeholder="Название папки"
+      [(ngModel)]="data.name"
+      class="container__mid__input">
+  </div>
+  <div class="container__buttons">
+    <button [mat-dialog-close]="data.name" class="container__buttons__button">Сохранить</button>
+    <button (click)="onNoClick()" class="container__buttons__button">Отменить</button>
+  </div>
+</div>
