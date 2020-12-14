@@ -4,12 +4,16 @@
       Быстрые ссылки
     </h4>
     <div class="container__block__content">
-
+      <ng-container *ngIf="dataAPI">
+        <div *ngFor="let i of dataAPI">
+          {{i.name}}
+        </div>
+      </ng-container>
     </div>
   </div>
 
   <div class="container__buttons">
-    <button class="container__buttons__button">
+    <button mat-raised-button (click)="createLink()" class="container__buttons__button">
       Добавить ссылку
     </button>
   </div>

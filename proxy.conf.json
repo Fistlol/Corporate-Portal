@@ -1,0 +1,14 @@
+{
+  "/CrimeWebAPI": {
+    "target": "http://anticor.idet.kz/",
+    "secure": false,
+    "logLevel": "debug",
+    "changeOrigin": true
+  },
+  "/CorporateWebAPI": {
+    "target": "http://anticor.idet.kz/",
+    "secure": false,
+    "logLevel": "debug",
+    "changeOrigin": true
+  }
+}

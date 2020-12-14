@@ -1,4 +1,6 @@
 import {ChangeDetectionStrategy, Component, OnInit} from '@angular/core';
+import {DateBoxComponent} from '../date-box/date-box.component';
+
 
 @Component({
   selector: 'app-main',
@@ -7,6 +9,7 @@ import {ChangeDetectionStrategy, Component, OnInit} from '@angular/core';
   styleUrls: ['./main.component.scss']
 })
 export class MainComponent implements OnInit {
+  exampleHeader = DateBoxComponent;
   constructor() {
   }
 

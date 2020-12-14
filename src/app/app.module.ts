@@ -5,9 +5,12 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {BrowserAnimationsModule, NoopAnimationsModule} from '@angular/platform-browser/animations';
 import { MatDialogModule } from '@angular/material/dialog';
 import { DialogFolderComponent } from './dialog-folder/dialog-folder.component';
-import {MatFormFieldModule} from '@angular/material/form-field';
-import {MatInputModule} from '@angular/material/input';
-import {MatButtonModule} from '@angular/material/button';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatButtonModule } from '@angular/material/button';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import {MatIconModule} from '@angular/material/icon';
+import {MatNativeDateModule} from '@angular/material/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -20,6 +23,8 @@ import { MapComponent } from './map/map.component';
 import { FolderComponent } from './folder/folder.component';
 import { CameraComponent } from './camera/camera.component';
 import { LinkComponent } from './link/link.component';
+import { DateBoxComponent } from './date-box/date-box.component';
+
 
 @NgModule({
   declarations: [
@@ -33,7 +38,8 @@ import { LinkComponent } from './link/link.component';
     FolderComponent,
     CameraComponent,
     LinkComponent,
-    DialogFolderComponent
+    DialogFolderComponent,
+    DateBoxComponent
   ],
   imports: [
     BrowserModule,
@@ -46,7 +52,10 @@ import { LinkComponent } from './link/link.component';
     MatInputModule,
     MatButtonModule,
     BrowserAnimationsModule,
-    NoopAnimationsModule
+    NoopAnimationsModule,
+    MatDatepickerModule,
+    MatIconModule,
+    MatNativeDateModule
   ],
   exports: [AppRoutingModule],
   providers: [],

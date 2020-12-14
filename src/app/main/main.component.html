@@ -62,7 +62,13 @@
     <div class="container__right__block">
       <router-outlet></router-outlet>
       <div class="container__right__block__events">
-        <div class="container__right__block__events__calendar"></div>
+        <div class="container__right__block__events__calendar">
+          <mat-form-field appearance="fill">
+            <input matInput [matDatepicker]="picker">
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker [calendarHeaderComponent]="exampleHeader"></mat-datepicker>
+          </mat-form-field>
+        </div>
       </div>
     </div>
   </div>

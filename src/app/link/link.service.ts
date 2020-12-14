@@ -5,11 +5,11 @@ import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
-export class AuthorizeService {
+export class LinkService {
 
   constructor(private http: HttpClient) { }
 
-  login(username: string, password: string): Observable<any> {
-    return this.http.post(`CrimeWebAPI/User/Login?username=${username}&password=${password}`, {}, {observe: 'response'});
+  getLinks(): Observable<any> {
+    return this.http.get(`CorporateWebAPI/Hyperlink/GetHyperlinks`);
   }
 }

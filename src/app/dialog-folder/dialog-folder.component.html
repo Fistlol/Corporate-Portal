@@ -10,18 +10,22 @@
 <!--  <button mat-button (click)="onNoClick()" class="close">Отменить</button>-->
 <!--</div>-->
 
-<div class="container">
+<div class="container" style="padding-bottom: 20px;">
   <div class="container__top">
     <h2 class="container__top__title">Создать новую папку</h2>
   </div>
   <div class="container__mid">
-    <input
-      placeholder="Название папки"
-      [(ngModel)]="data.name"
-      class="container__mid__input">
+    <mat-form-field style="width: 100%;">
+      <mat-label style="font-size: 14px;line-height: 16px;">Название папки</mat-label>
+      <input
+        matInput
+        [(ngModel)]="data.name"
+        class="container__mid__input"
+      >
+    </mat-form-field>
   </div>
-  <div class="container__buttons">
-    <button [mat-dialog-close]="data.name" class="container__buttons__button">Сохранить</button>
-    <button (click)="onNoClick()" class="container__buttons__button">Отменить</button>
+  <div class="container__buttons" mat-dialog-actions>
+    <button mat-button [mat-dialog-close]="data.name" class="container__buttons__button">Сохранить</button>
+    <button mat-button (click)="onNoClick()" class="container__buttons__button">Отменить</button>
   </div>
 </div>
