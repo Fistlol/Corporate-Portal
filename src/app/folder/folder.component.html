@@ -1,10 +1,18 @@
 <div class="container">
   <div class="container__left">
     <div class="container__left__content">
-
+      <ng-container class="container__left__content__folders">
+        <div *ngFor="let i of content.dataFolderAPI" class="container__left__content__folders__block">
+          <img class="container__left__content__folders__block__img" src="assets/icons/main/folder.svg">
+          {{i.name}}
+        </div>
+      </ng-container>
     </div>
     <div class="container__left__buttons">
-      <button mat-raised-button (click)="createFolder()" class="container__left__buttons__button">
+      <button
+        mat-raised-button
+        (click)="createFolder()"
+        class="container__left__buttons__button">
         Создать папку
       </button>
       <button mat-raised-button (click)="createFile()" class="container__left__buttons__button">
@@ -14,6 +22,12 @@
   </div>
 
   <div class="container__right">
-
+    <mat-form-field class="example-form-field">
+      <mat-label>Clearable input</mat-label>
+      <input matInput type="text" [(ngModel)]="name">
+      <button mat-button *ngIf="value" matSuffix mat-icon-button aria-label="Clear" (click)="value=''">
+        <mat-icon>close</mat-icon>
+      </button>
+    </mat-form-field>
   </div>
 </div>

@@ -1,6 +1,6 @@
 export interface DataLink {
-  ImageData: null;
-  ImageExtensionId: null;
+  ImageData: string;
+  ImageExtensionId: string;
   id: number;
   name: string;
   url: string;

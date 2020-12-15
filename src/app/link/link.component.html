@@ -4,8 +4,11 @@
       Быстрые ссылки
     </h4>
     <div class="container__block__content">
-      <ng-container *ngIf="dataAPI">
-        <div *ngFor="let i of dataAPI">
+      <ng-container class="container__block__content__links">
+        <div *ngFor="let i of content.dataLinkAPI" class="container__block__content__links__link">
+          <a href="{{i.url}}" target="_blank" class="container__block__content__links__link__circle">
+            <img src="assets/icons/main/link.svg" class="container__block__content__links__link__circle__img">
+          </a>
           {{i.name}}
         </div>
       </ng-container>

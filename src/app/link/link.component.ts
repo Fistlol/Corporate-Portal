@@ -1,8 +1,7 @@
 import {Component, OnInit} from '@angular/core';
-import {HttpClient} from '@angular/common/http';
-import {LinkService} from './link.service';
 import {MatDialog} from '@angular/material/dialog';
 import {DialogFolderComponent} from '../dialog-folder/dialog-folder.component';
+import {ContentComponent} from '../content/content.component';
 
 @Component({
   selector: 'app-link',
@@ -11,27 +10,15 @@ import {DialogFolderComponent} from '../dialog-folder/dialog-folder.component';
 })
 export class LinkComponent implements OnInit {
   nameDialog = '';
-  response: any;
-  dataAPI = [];
+  linkDialog = false;
 
-  constructor(private http: HttpClient,
-              private dialog: MatDialog,
-              private links: LinkService) {
-  }
+  constructor(private dialog: MatDialog,
+              public content: ContentComponent) { }
 
-  ngOnInit(): void {
-    this.getLinks();
-  }
-
-  getLinks(): void {
-    this.links.getLinks().subscribe((response) => {
-      this.dataAPI = response;
-      this.response = response;
-      console.log(this.response);
-    });
-  }
+  ngOnInit(): void {}
 
   createLink(): void {
+    this.linkDialog = true;
     const dialogRef = this.dialog.open(DialogFolderComponent, {
       data: {name: this.nameDialog}
     });
