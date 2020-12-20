@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {MatDialog} from '@angular/material/dialog';
 import {DialogFolderComponent} from '../dialog-folder/dialog-folder.component';
-import {ContentComponent} from '../content/content.component';
+import {MainComponent} from '../main/main.component';
 
 @Component({
   selector: 'app-link',
@@ -13,7 +13,7 @@ export class LinkComponent implements OnInit {
   linkDialog = false;
 
   constructor(private dialog: MatDialog,
-              public content: ContentComponent) { }
+              public main: MainComponent) { }
 
   ngOnInit(): void {}
 

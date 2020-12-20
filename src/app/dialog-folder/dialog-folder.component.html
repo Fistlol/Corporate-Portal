@@ -1,4 +1,4 @@
-<div *ngIf="folder.folderDialog" class="container" style="padding-bottom: 20px;">
+<div class="container" style="padding-bottom: 20px;">
   <div class="container__top">
     <h2 class="container__top__title">Создать новую папку</h2>
   </div>
@@ -18,30 +18,30 @@
   </div>
 </div>
 
-<div *ngIf="link.linkDialog" class="container" style="padding-bottom: 20px;">
-  <div class="container__top">
-    <h2 class="container__top__title">Добавление ссылки</h2>
-  </div>
-  <div class="container__mid">
-    <mat-form-field style="width: 100%; display: flex; flex-direction: column">
-      <mat-label style="font-size: 14px;line-height: 16px;">Название ссылки</mat-label>
-      <input
-        matInput
-        [(ngModel)]="data.name"
-        class="container__mid__input"
-      >
-    </mat-form-field>
-    <mat-form-field style="width: 100%;">
-      <mat-label style="font-size: 14px;line-height: 16px;">Link</mat-label>
-      <input
-        matInput
-        [(ngModel)]="data.name"
-        class="container__mid__input"
-      >
-    </mat-form-field>
-  </div>
-  <div class="container__buttons" mat-dialog-actions>
-    <button mat-button [mat-dialog-close]="data.name" class="container__buttons__button">Сохранить</button>
-    <button mat-button (click)="onNoClick()" class="container__buttons__button">Отменить</button>
-  </div>
-</div>
+<!--<div *ngIf="link.linkDialog" class="container" style="padding-bottom: 20px;">-->
+<!--  <div class="container__top">-->
+<!--    <h2 class="container__top__title">Добавление ссылки</h2>-->
+<!--  </div>-->
+<!--  <div class="container__mid">-->
+<!--    <mat-form-field style="width: 100%; display: flex; flex-direction: column">-->
+<!--      <mat-label style="font-size: 14px;line-height: 16px;">Название ссылки</mat-label>-->
+<!--      <input-->
+<!--        matInput-->
+<!--        [(ngModel)]="data.name"-->
+<!--        class="container__mid__input"-->
+<!--      >-->
+<!--    </mat-form-field>-->
+<!--    <mat-form-field style="width: 100%;">-->
+<!--      <mat-label style="font-size: 14px;line-height: 16px;">Link</mat-label>-->
+<!--      <input-->
+<!--        matInput-->
+<!--        [(ngModel)]="data.name"-->
+<!--        class="container__mid__input"-->
+<!--      >-->
+<!--    </mat-form-field>-->
+<!--  </div>-->
+<!--  <div class="container__buttons" mat-dialog-actions>-->
+<!--    <button mat-button [mat-dialog-close]="data.name" class="container__buttons__button">Сохранить</button>-->
+<!--    <button mat-button (click)="onNoClick()" class="container__buttons__button">Отменить</button>-->
+<!--  </div>-->
+<!--</div>-->

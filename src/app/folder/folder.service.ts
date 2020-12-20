@@ -13,7 +13,7 @@ export class FolderService {
     return this.http.get(`CorporateWebAPI/Folder/GetFolders?parentId=${parentId}`);
   }
 
-  getFiles(): Observable<any> {
-    return this.http.get('CorporateWebAPI/File/GetFiles?folderId=6', {});
+  getFiles(folderId: number): Observable<any> {
+    return this.http.get(`CorporateWebAPI/File/GetFiles?folderId=${folderId}&sortBy=1`);
   }
 }

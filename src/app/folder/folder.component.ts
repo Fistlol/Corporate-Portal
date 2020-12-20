@@ -1,7 +1,11 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit, ViewChild} from '@angular/core';
 import {MatDialog} from '@angular/material/dialog';
+import {MatTable} from '@angular/material/table';
+
 import {DialogFolderComponent} from '../dialog-folder/dialog-folder.component';
-import {ContentComponent} from '../content/content.component';
+import {MainComponent} from '../main/main.component';
+import {DataFile} from '../dataFile';
+
 
 @Component({
   selector: 'app-folder',
@@ -9,13 +13,15 @@ import {ContentComponent} from '../content/content.component';
   styleUrls: ['./folder.component.scss']
 })
 export class FolderComponent implements OnInit{
+  displayedColumns: string[] = ['name', 'createdBy', 'createdOn', 'fileType'];
   nameDialog = '';
   parentId = 2;
   value = '';
   folderDialog = false;
 
+
   constructor(private dialog: MatDialog,
-              public content: ContentComponent) { }
+              public main: MainComponent) { }
 
   ngOnInit(): void {}
 

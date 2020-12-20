@@ -4,5 +4,5 @@ export interface DataFolder {
   name: string;
   showMainMenu: boolean;
   createdBy: number;
-  createdOn: Date;
+  createdOn: string;
 }

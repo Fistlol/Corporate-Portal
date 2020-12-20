@@ -2,7 +2,7 @@
   <div class="container__left">
     <div class="container__left__content">
       <ng-container class="container__left__content__folders">
-        <div *ngFor="let i of content.dataFolderAPI" class="container__left__content__folders__block">
+        <div *ngFor="let i of main.dataFolderAPI" class="container__left__content__folders__block">
           <img class="container__left__content__folders__block__img" src="assets/icons/main/folder.svg">
           {{i.name}}
         </div>
@@ -22,12 +22,50 @@
   </div>
 
   <div class="container__right">
-    <mat-form-field class="example-form-field">
-      <mat-label>Clearable input</mat-label>
-      <input matInput type="text" [(ngModel)]="name">
-      <button mat-button *ngIf="value" matSuffix mat-icon-button aria-label="Clear" (click)="value=''">
-        <mat-icon>close</mat-icon>
+    <mat-form-field class="container__right__form" *ngFor="let i of main.dataFolderAPI">
+      <input matInput class="container__right__form__input" type="text" [(ngModel)]="i.name">
+      <button
+        mat-button
+        class="container__right__form__button"
+        *ngIf="value"
+        matSuffix
+        mat-icon-button
+        aria-label="Clear"
+        (click)="value=''"
+      >
+        <mat-icon class="container__right__form__button__icon">close</mat-icon>
       </button>
     </mat-form-field>
+    <div class="container__right__block">
+<!--      <table mat-table [dataSource]="data" class="example-table"-->
+<!--             matSort matSortActive="created" matSortDisableClear matSortDirection="desc">-->
+<!--        &lt;!&ndash; Number Column &ndash;&gt;-->
+<!--        <ng-container matColumnDef="number">-->
+<!--          <th mat-header-cell *matHeaderCellDef>Тип</th>-->
+<!--          <td mat-cell *matCellDef="let row">{{row.fileType}}</td>-->
+<!--        </ng-container>-->
+
+<!--        &lt;!&ndash; Title Column &ndash;&gt;-->
+<!--        <ng-container matColumnDef="title">-->
+<!--          <th mat-header-cell *matHeaderCellDef>Дата</th>-->
+<!--          <td mat-cell *matCellDef="let row">{{row.createdOn}}</td>-->
+<!--        </ng-container>-->
+
+<!--        &lt;!&ndash; State Column &ndash;&gt;-->
+<!--        <ng-container matColumnDef="state">-->
+<!--          <th mat-header-cell *matHeaderCellDef>От кого</th>-->
+<!--          <td mat-cell *matCellDef="let row">{{row.createdBy}}</td>-->
+<!--        </ng-container>-->
+
+<!--        &lt;!&ndash; Created Column &ndash;&gt;-->
+<!--        <ng-container matColumnDef="created">-->
+<!--          <th mat-header-cell *matHeaderCellDef mat-sort-header disableClear>Название</th>-->
+<!--          <td mat-cell *matCellDef="let row">{{row.name}}</td>-->
+<!--        </ng-container>-->
+
+<!--        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>-->
+<!--        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>-->
+<!--      </table>-->
+    </div>
   </div>
 </div>
