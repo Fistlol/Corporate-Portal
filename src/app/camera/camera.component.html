@@ -1,15 +1,21 @@
 <div class="container">
   <div class="container__left">
     <div class="container__left__content">
-      <ng-container class="container__left__content__folders">
-        <div *ngFor="let i of main.dataCameraAPI" class="container__left__content__folders__block">
-          <img class="container__left__content__folders__block__img" src="assets/icons/main/folder.svg">
-          {{i.name}}
-        </div>
-      </ng-container>
+      <div
+        *ngFor="let folder of dataFolderAPI; index as i"
+        class="container__left__content__block"
+        (click)="getFolderIdx(i)"
+      >
+        <img class="container__left__content__block__img" src="assets/icons/main/folder.svg">
+        {{folder.name}}
+      </div>
     </div>
     <div class="container__left__buttons">
-      <button mat-raised-button (click)="createFolder()" class="container__left__buttons__button">
+      <button
+        mat-raised-button
+        (click)="createFolder()"
+        class="container__left__buttons__button"
+      >
         Создать папку
       </button>
       <button mat-raised-button (click)="createFile()" class="container__left__buttons__button">
@@ -19,6 +25,22 @@
   </div>
 
   <div class="container__right">
+    <mat-form-field class="container__right__form" *ngIf="dataFolderAPI?.length">
+      <input matInput class="container__right__form__input" type="text" [(ngModel)]="dataFolderAPI[idx].name">
+      <button
+        mat-button
+        class="container__right__form__button"
+        *ngIf="value"
+        matSuffix
+        mat-icon-button
+        aria-label="Clear"
+        (click)="value=''"
+      >
+        <mat-icon class="container__right__form__button__icon">close</mat-icon>
+      </button>
+    </mat-form-field>
+    <div class="container__right__block">
 
+    </div>
   </div>
 </div>

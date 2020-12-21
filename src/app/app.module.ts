@@ -12,6 +12,9 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatIconModule} from '@angular/material/icon';
 import {MatNativeDateModule} from '@angular/material/core';
 import {MatTableModule} from '@angular/material/table';
+import {MAT_DATE_LOCALE} from '@angular/material/core';
+import {registerLocaleData} from '@angular/common';
+import localeRu from '@angular/common/locales/ru';
 
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
@@ -25,7 +28,9 @@ import {FolderComponent} from './folder/folder.component';
 import {CameraComponent} from './camera/camera.component';
 import {LinkComponent} from './link/link.component';
 import {DateBoxComponent} from './date-box/date-box.component';
+import {DatePipe} from './date.pipe';
 
+registerLocaleData(localeRu, 'ru');
 
 @NgModule({
   declarations: [
@@ -40,7 +45,8 @@ import {DateBoxComponent} from './date-box/date-box.component';
     CameraComponent,
     LinkComponent,
     DialogFolderComponent,
-    DateBoxComponent
+    DateBoxComponent,
+    DatePipe
   ],
   imports: [
     BrowserModule,

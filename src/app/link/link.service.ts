@@ -12,4 +12,8 @@ export class LinkService {
   getLinks(): Observable<any> {
     return this.http.get(`CorporateWebAPI/Hyperlink/GetHyperlinks`);
   }
+
+  // getLinkImage(): Observable<any> {
+  //   return this.http.get(`http://anticor.idet.kz/CorporateWebAPI/Hyperlink/GetHyperlinkImage?id=${imageId}`);
+  // }
 }

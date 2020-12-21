@@ -1,18 +1,21 @@
 <div class="container">
   <div class="container__left">
     <div class="container__left__content">
-      <ng-container class="container__left__content__folders">
-        <div *ngFor="let i of main.dataFolderAPI" class="container__left__content__folders__block">
-          <img class="container__left__content__folders__block__img" src="assets/icons/main/folder.svg">
-          {{i.name}}
-        </div>
-      </ng-container>
+      <div
+        *ngFor="let folder of dataFolderAPI; index as i"
+        class="container__left__content__block"
+        (click)="getFolderIdx(i)"
+      >
+        <img class="container__left__content__block__img" src="assets/icons/main/folder.svg">
+        {{folder.name}}
+      </div>
     </div>
     <div class="container__left__buttons">
       <button
         mat-raised-button
         (click)="createFolder()"
-        class="container__left__buttons__button">
+        class="container__left__buttons__button"
+      >
         Создать папку
       </button>
       <button mat-raised-button (click)="createFile()" class="container__left__buttons__button">
@@ -22,8 +25,8 @@
   </div>
 
   <div class="container__right">
-    <mat-form-field class="container__right__form" *ngFor="let i of main.dataFolderAPI">
-      <input matInput class="container__right__form__input" type="text" [(ngModel)]="i.name">
+    <mat-form-field class="container__right__form" *ngIf="dataFolderAPI?.length">
+      <input matInput class="container__right__form__input" type="text" [(ngModel)]="dataFolderAPI[idx].name">
       <button
         mat-button
         class="container__right__form__button"
@@ -37,35 +40,26 @@
       </button>
     </mat-form-field>
     <div class="container__right__block">
-<!--      <table mat-table [dataSource]="data" class="example-table"-->
-<!--             matSort matSortActive="created" matSortDisableClear matSortDirection="desc">-->
-<!--        &lt;!&ndash; Number Column &ndash;&gt;-->
-<!--        <ng-container matColumnDef="number">-->
-<!--          <th mat-header-cell *matHeaderCellDef>Тип</th>-->
-<!--          <td mat-cell *matCellDef="let row">{{row.fileType}}</td>-->
-<!--        </ng-container>-->
-
-<!--        &lt;!&ndash; Title Column &ndash;&gt;-->
-<!--        <ng-container matColumnDef="title">-->
-<!--          <th mat-header-cell *matHeaderCellDef>Дата</th>-->
-<!--          <td mat-cell *matCellDef="let row">{{row.createdOn}}</td>-->
-<!--        </ng-container>-->
-
-<!--        &lt;!&ndash; State Column &ndash;&gt;-->
-<!--        <ng-container matColumnDef="state">-->
-<!--          <th mat-header-cell *matHeaderCellDef>От кого</th>-->
-<!--          <td mat-cell *matCellDef="let row">{{row.createdBy}}</td>-->
-<!--        </ng-container>-->
-
-<!--        &lt;!&ndash; Created Column &ndash;&gt;-->
-<!--        <ng-container matColumnDef="created">-->
-<!--          <th mat-header-cell *matHeaderCellDef mat-sort-header disableClear>Название</th>-->
-<!--          <td mat-cell *matCellDef="let row">{{row.name}}</td>-->
-<!--        </ng-container>-->
-
-<!--        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>-->
-<!--        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>-->
-<!--      </table>-->
+      <table class="container__right__block__table">
+        <tr class="container__right__block__table__title" *ngFor="let file of dataFileAPI; index as i">
+          <div class="container__right__block__table__title__column">
+            <th class="container__right__block__table__title__column__name" >Название</th>
+            <td class="container__right__block__table__title__column__rowName">{{file.name}}</td>
+          </div>
+          <div class="container__right__block__table__title__column">
+            <th class="container__right__block__table__title__column__createdBy">От кого</th>
+            <td class="container__right__block__table__title__column__rowCreatedBy">{{file.createdBy}}</td>
+          </div>
+          <div class="container__right__block__table__title__column">
+            <th class="container__right__block__table__title__column__createdOn">Дата</th>
+            <td class="container__right__block__table__title__column__rowCreatedOn">{{file.createdOn | date}}</td>
+          </div>
+          <div class="container__right__block__table__title__column">
+            <th class="container__right__block__table__title__column__type">Тип</th>
+            <td class="container__right__block__table__title__column__rowType">{{file.fileType}}</td>
+          </div>
+        </tr>
+      </table>
     </div>
   </div>
 </div>

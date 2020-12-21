@@ -5,11 +5,11 @@
     </h4>
     <div class="container__block__content">
       <ng-container class="container__block__content__links">
-        <div *ngFor="let i of main.dataLinkAPI" class="container__block__content__links__link">
-          <a href="{{i.url}}" target="_blank" class="container__block__content__links__link__circle">
+        <div *ngFor="let link of dataLinkAPI; index as i" class="container__block__content__links__link">
+          <a href="{{link.url}}" target="_blank" class="container__block__content__links__link__circle">
             <img src="assets/icons/main/link.svg" class="container__block__content__links__link__circle__img">
           </a>
-          {{i.name}}
+          {{link.name}}
         </div>
       </ng-container>
     </div>

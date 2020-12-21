@@ -1,21 +1,41 @@
-import {Component, OnInit} from '@angular/core';
+import {ChangeDetectionStrategy, ChangeDetectorRef, Component, OnInit} from '@angular/core';
 import {MatDialog} from '@angular/material/dialog';
+
 import {DialogFolderComponent} from '../dialog-folder/dialog-folder.component';
-import {MainComponent} from '../main/main.component';
+import {LinkService} from './link.service';
+import {DataLink} from '../dataLink';
 
 @Component({
   selector: 'app-link',
   templateUrl: './link.component.html',
-  styleUrls: ['./link.component.scss']
+  styleUrls: ['./link.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class LinkComponent implements OnInit {
   nameDialog = '';
   linkDialog = false;
+  dataLinkAPI: any[] = [];
+  imageId: any;
 
   constructor(private dialog: MatDialog,
-              public main: MainComponent) { }
+              public linkService: LinkService,
+              private cdRef: ChangeDetectorRef) { }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.getLinks();
+  }
+
+  getLinks(): void {
+    this.linkService.getLinks().subscribe((response: DataLink[]) => {
+      this.cdRef.markForCheck();
+      this.dataLinkAPI = response;
+      console.log(this.dataLinkAPI);
+    });
+  }
+
+  getLinkImage(): void {
+
+  }
 
   createLink(): void {
     this.linkDialog = true;
