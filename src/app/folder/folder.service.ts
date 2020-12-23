@@ -16,4 +16,12 @@ export class FolderService {
   getFiles(folderId: number): Observable<any> {
     return this.http.get(`CorporateWebAPI/File/GetFiles?folderId=${folderId}&sortBy=1`);
   }
+
+  setFolder(): Observable<any> {
+    return this.http.post(`CorporateWebAPI/Folder/SetFolder`, {}, {observe: 'response'});
+  }
+
+  delFolder(folderId: number): Observable<any> {
+    return this.http.post(`CorporateWebAPI/Folder/DelFolder?id=${folderId}`, {}, {observe: 'response'});
+  }
 }

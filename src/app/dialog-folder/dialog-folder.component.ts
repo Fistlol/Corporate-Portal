@@ -1,6 +1,7 @@
 import { Component, Inject } from '@angular/core';
 import {MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
 import {DataDialog} from '../dataDialog';
+import {FolderService} from '../folder/folder.service';
 
 @Component({
   selector: 'app-dialog-folder',
@@ -8,10 +9,9 @@ import {DataDialog} from '../dataDialog';
   styleUrls: ['./dialog-folder.component.scss']
 })
 export class DialogFolderComponent {
-
-  constructor(
-    public dialogRef: MatDialogRef<DialogFolderComponent>,
-    @Inject(MAT_DIALOG_DATA) public data: DataDialog) { }
+  response: any;
+  constructor(public dialogRef: MatDialogRef<DialogFolderComponent>,
+              @Inject(MAT_DIALOG_DATA) public data: DataDialog) { }
 
   onNoClick(): void {
     this.dialogRef.close();

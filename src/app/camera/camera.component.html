@@ -25,20 +25,17 @@
   </div>
 
   <div class="container__right">
-    <mat-form-field class="container__right__form" *ngIf="dataFolderAPI?.length">
-      <input matInput class="container__right__form__input" type="text" [(ngModel)]="dataFolderAPI[idx].name">
-      <button
-        mat-button
-        class="container__right__form__button"
-        *ngIf="value"
-        matSuffix
-        mat-icon-button
-        aria-label="Clear"
-        (click)="value=''"
-      >
-        <mat-icon class="container__right__form__button__icon">close</mat-icon>
+    <div class="container__right__form" *ngIf="dataFolderAPI?.length">
+      <div class="container__right__form__block">
+        <input matInput class="container__right__form__block__input" type="text" [(ngModel)]="dataFolderAPI[idx].name">
+        <button class="container__right__form__block__input__button">
+          <img class="container__right__form__input__button__icon" src="assets/icons/main/rename.svg" alt="pencil">
+        </button>
+      </div>
+      <button class="container__right__form__delete">
+        Удалить альбом
       </button>
-    </mat-form-field>
+    </div>
     <div class="container__right__block">
 
     </div>

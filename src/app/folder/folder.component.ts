@@ -20,6 +20,8 @@ export class FolderComponent implements OnInit {
   dataFolderAPI: any[] = [];
   folderId: any;
   date: any;
+  test: any;
+  del = false;
   dataFileAPI: any[] = [];
   idx = 0;
 
@@ -41,7 +43,7 @@ export class FolderComponent implements OnInit {
         this.cdRef.markForCheck();
         this.dataFileAPI = result;
         this.date = new Date(this.dataFileAPI[this.idx].createdOn);
-        this.dataFileAPI[0].createdOn = this.date;
+        this.dataFileAPI[this.idx].createdOn = this.date;
         console.log(this.dataFileAPI, 'FILESSS folder');
       });
       console.log(this.dataFolderAPI);
@@ -55,8 +57,24 @@ export class FolderComponent implements OnInit {
       this.cdRef.markForCheck();
       this.dataFileAPI = result;
       this.date = new Date(this.dataFileAPI[this.idx].createdOn);
-      this.dataFileAPI[0].createdOn = this.date;
+      this.dataFileAPI[this.idx].createdOn = this.date;
       console.log(this.dataFileAPI, 'FILESSS folder');
+    });
+  }
+
+  setFolder(): any {
+    this.folderService.setFolder().subscribe((test) => {
+      this.cdRef.markForCheck();
+      this.test = test;
+      console.log(this.test, 'SEEEEEEEEEEEEEEEET');
+    });
+  }
+
+  delFolder(): any {
+    this.folderService.delFolder(this.folderId).subscribe(result => {
+      this.cdRef.markForCheck();
+      this.del = result;
+      console.log(this.del, 'DELETED');
     });
   }
 
@@ -68,6 +86,7 @@ export class FolderComponent implements OnInit {
 
     dialogRef.afterClosed().subscribe(result => {
       console.log('The dialog was closed');
+      this.setFolder();
       this.nameDialog = result;
       this.value = result;
     });
